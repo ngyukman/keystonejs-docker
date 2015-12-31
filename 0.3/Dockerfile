@@ -9,6 +9,8 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 RUN npm install dotenv --global
+RUN npm install async --global
+RUN npm install underscore --global
 RUN npm install keystone@$KEYSTONEJS_VERSION --global
 
 EXPOSE 3000
