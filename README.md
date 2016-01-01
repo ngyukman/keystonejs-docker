@@ -12,12 +12,10 @@ The image is aiming to deploy keystonejs without rebuilding the image to install
 ```
 docker run --name your-mongo -d mongo
 ```
-
 3. Add the mongo db settings into .env
 ```
 MONGO_URI=mongodb://mongo
 ```
-
 4. Run the container by the following command
 ```
 docker run -p 80:3000 -it -d --link your-mongo:mongo --name keystonejs -v "$PWD":/usr/src/app ngyukman/keystonejs
