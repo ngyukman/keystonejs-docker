@@ -10,7 +10,7 @@ ENV NODE_PATH $NODE_MODULE_INSTALLATION_PATH/node_modules
 RUN mkdir -p $NODE_MODULE_INSTALLATION_PATH
 WORKDIR $NODE_MODULE_INSTALLATION_PATH
 
-RUN npm install dotenv@1.20
+RUN npm install dotenv@1.2.0
 RUN npm install keystone@$KEYSTONEJS_VERSION
 
 WORKDIR /usr/src/app
