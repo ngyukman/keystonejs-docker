@@ -3,15 +3,17 @@ FROM node
 MAINTAINER Ng Yuk Man <ngyukman@gmail.com>
 
 ENV KEYSTONEJS_VERSION 0.3.16
-ENV NODE_PATH /usr/local/lib/node_modules
 
-RUN mkdir -p /usr/src/app
+ENV NODE_MODULE_INSTALLATION_PATH /usr/src/modules
+ENV NODE_PATH $NODE_MODULE_INSTALLATION_PATH/node_modules
+
+RUN mkdir -p $NODE_MODULE_INSTALLATION_PATH
+WORKDIR $NODE_MODULE_INSTALLATION_PATH
+
+RUN npm install dotenv@1.20
+RUN npm install keystone@$KEYSTONEJS_VERSION
+
 WORKDIR /usr/src/app
-
-RUN npm install dotenv --global
-RUN npm install async --global
-RUN npm install underscore --global
-RUN npm install keystone@$KEYSTONEJS_VERSION --global
 
 EXPOSE 3000
 
