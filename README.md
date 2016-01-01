@@ -7,20 +7,19 @@ The image is aiming to deploy keystonejs without rebuilding the image to install
 
 ### To use the image from scratch
 1. [Generate the keystonejs project](http://keystonejs.com/getting-started/)
-
 2. Optionally start [mongo db](https://hub.docker.com/_/mongo/)
-```
-docker run --name your-mongo -d mongo
-```
+
+        docker run --name your-mongo -d mongo
+
 3. Add the mongo db settings into .env
-```
-MONGO_URI=mongodb://mongo
-```
+
+        MONGO_URI=mongodb://mongo
+
 4. Run the container by the following command
-```
-docker run -p 80:3000 -it -d --link your-mongo:mongo --name keystonejs -v "$PWD":/usr/src/app ngyukman/keystonejs
-```
-alternatively if sass is enabled
-```
-docker run -p 80:3000 -it -d --link your-mongo:mongo --name keystonejs -v "$PWD":/usr/src/app ngyukman/keystonejs:sass
-```
+
+        docker run -p 80:3000 -it -d --link your-mongo:mongo --name keystonejs -v "$PWD":/usr/src/app ngyukman/keystonejs
+
+  alternatively if sass is enabled
+
+        docker run -p 80:3000 -it -d --link your-mongo:mongo --name keystonejs -v "$PWD":/usr/src/app ngyukman/keystonejs:sass
+
